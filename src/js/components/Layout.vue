@@ -5,7 +5,7 @@
 
                 <div class="navbar-brand">
                     <div class="navbar-item">
-                        <a href="" class="title is-5">snaploss</a>
+                        <router-link :to="{ name: 'app.home.index' }" class="title is-5" exact>snaploss</router-link>
                     </div>
                 </div>
 
@@ -29,3 +29,9 @@
         <router-view></router-view>
     </div>
 </template>
+
+<style lang="scss" scoped>
+    .navbar {
+        box-shadow: 0 1px 15px 1px rgba(69, 65, 78, 0.1);
+    }
+</style>
