@@ -21,7 +21,7 @@ const routes = [
             {
                 name: 'app.animals.index',
                 path: '/animais',
-                component: () => import('@scripts/pages/home/Home')
+                component: () => import('@scripts/pages/animals/Animals')
             },
             {
                 name: 'app.account.index',
