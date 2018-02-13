@@ -6,7 +6,7 @@
 
                     <div class="columns">
                         <div class="column is-8 is-offset-2">
-                            <form action="#" @submit.prevent="">
+                            <form action="#" @submit.prevent="onSubmit">
                                 <div class="field">
                                     <label class="label">E-mail</label>
 
@@ -36,7 +36,7 @@
 
                             <hr>
 
-                            <a href="#" class="button is-medium is-fullwidth is-link">
+                            <a href="#" class="button is-medium is-fullwidth is-link" @click.prevent="onSubmit">
                                 <span class="icon is-small">
                                     <i class="fab fa-facebook-f"></i>
                                 </span>
@@ -57,6 +57,24 @@
         <div class="hero is-info is-fullheight slider"></div>
     </div>
 </template>
+
+<script>
+    export default {
+        data () {
+            return {
+
+            }
+        },
+
+        methods: {
+            onSubmit() {
+                this.$router.push({
+                    name: 'app.home.index'
+                })
+            }
+        }
+    }
+</script>
 
 <style lang="scss" scoped>
     .login {
