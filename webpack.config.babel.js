@@ -1,6 +1,7 @@
 import path from 'path'
 import CleanWebpackPlugin from 'clean-webpack-plugin'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
+import ExtractTextWebpackPlugin from "extract-text-webpack-plugin";
 
 export default {
 
@@ -20,11 +21,14 @@ export default {
             },
             {
                 test: /\.vue$/,
-                loader: 'vue-loader'
+                loader: 'vue-loader',
+                options: {
+                    extractCSS: true
+                }
             },
             {
-                test: /\.(css|scss)/,
-                loaders: ['css-loader', 'sass-loader']
+                test: /\.(css|scss)$/,
+                loaders: ["css-loader", "sass-loader"]
             }
         ]
     },
@@ -42,6 +46,7 @@ export default {
 
     plugins: [
         new CleanWebpackPlugin(['public']),
+        new ExtractTextWebpackPlugin('css/app.bundle.css'),
         new HtmlWebpackPlugin({
             title: 'snaploss',
             template: path.resolve(__dirname, 'src/index.html')
